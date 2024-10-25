@@ -1,0 +1,6 @@
+@TeachWaveAPI.Presentation_HostAddress = http://localhost:5133
+
+GET {{TeachWaveAPI.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B5206A59-4350-41CC-9176-0C40B168C4D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{83D1BF9D-FB3A-4959-9F48-CED0CAD612B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{BDFEFB20-44E4-41A5-A744-9A494409C19F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplication", "Aplication", "{0CFE2646-4258-409C-96A0-0462E4F5BD35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Presentation", "TeachWaveAPI.Presentation\TeachWaveAPI.Presentation.csproj", "{35738EEC-5225-4BB9-8BB1-1A89F69C1868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Application", "TeachWaveAPI.Application\TeachWaveAPI.Application.csproj", "{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Infraestructure", "TeachWaveAPI.Infraestructure\TeachWaveAPI.Infraestructure.csproj", "{CDF0A541-A883-4AA3-85FC-629166734309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Core", "TeachWaveAPI.Core\TeachWaveAPI.Core.csproj", "{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35738EEC-5225-4BB9-8BB1-1A89F69C1868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35738EEC-5225-4BB9-8BB1-1A89F69C1868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35738EEC-5225-4BB9-8BB1-1A89F69C1868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35738EEC-5225-4BB9-8BB1-1A89F69C1868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF0A541-A883-4AA3-85FC-629166734309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF0A541-A883-4AA3-85FC-629166734309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF0A541-A883-4AA3-85FC-629166734309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF0A541-A883-4AA3-85FC-629166734309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35738EEC-5225-4BB9-8BB1-1A89F69C1868} = {B5206A59-4350-41CC-9176-0C40B168C4D8}
+		{CB7F03C0-A3DE-45F2-9330-9C7F527036DE} = {0CFE2646-4258-409C-96A0-0462E4F5BD35}
+		{CDF0A541-A883-4AA3-85FC-629166734309} = {BDFEFB20-44E4-41A5-A744-9A494409C19F}
+		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8} = {83D1BF9D-FB3A-4959-9F48-CED0CAD612B6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C628805F-FD09-4DEF-A54D-AFA79994BC04}
+	EndGlobalSection
+EndGlobal
