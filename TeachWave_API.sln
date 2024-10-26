@@ -11,13 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplication", "Aplication", "{0CFE2646-4258-409C-96A0-0462E4F5BD35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Presentation", "TeachWaveAPI.Presentation\TeachWaveAPI.Presentation.csproj", "{35738EEC-5225-4BB9-8BB1-1A89F69C1868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeachWaveAPI.Presentation", "TeachWaveAPI.Presentation\TeachWaveAPI.Presentation.csproj", "{35738EEC-5225-4BB9-8BB1-1A89F69C1868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Application", "TeachWaveAPI.Application\TeachWaveAPI.Application.csproj", "{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeachWaveAPI.Application", "TeachWaveAPI.Application\TeachWaveAPI.Application.csproj", "{CB7F03C0-A3DE-45F2-9330-9C7F527036DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Infraestructure", "TeachWaveAPI.Infraestructure\TeachWaveAPI.Infraestructure.csproj", "{CDF0A541-A883-4AA3-85FC-629166734309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeachWaveAPI.Infraestructure", "TeachWaveAPI.Infraestructure\TeachWaveAPI.Infraestructure.csproj", "{CDF0A541-A883-4AA3-85FC-629166734309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachWaveAPI.Core", "TeachWaveAPI.Core\TeachWaveAPI.Core.csproj", "{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeachWaveAPI.Core", "TeachWaveAPI.Core\TeachWaveAPI.Core.csproj", "{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6E73A825-7D50-4BD5-9206-C6F6904EB298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B1D37D7-C455-4EAC-AE01-796B6FD450F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E73A825-7D50-4BD5-9206-C6F6904EB298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E73A825-7D50-4BD5-9206-C6F6904EB298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E73A825-7D50-4BD5-9206-C6F6904EB298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E73A825-7D50-4BD5-9206-C6F6904EB298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
