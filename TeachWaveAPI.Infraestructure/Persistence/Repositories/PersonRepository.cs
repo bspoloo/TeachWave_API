@@ -17,43 +17,43 @@ namespace TeachWaveAPI.Infraestructure.Persistence.Repositories
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-        public async Task<Person> AddAsync(Person person)
+        public async Task<User> AddAsync(User person)
         {
             if (person == null)
             {
                 throw new ArgumentNullException(nameof(person));
             }
-            await _context.Persons.AddAsync(person);
+            await _context.Users.AddAsync(person);
             await _context.SaveChangesAsync();
             return person;
         }
 
-        public async Task<Person?> DeleteAsync(int id)
+        public async Task<User?> DeleteAsync(int id)
         {
-            Person? person = await GetByIdAsync(id);
+            User? person = await GetByIdAsync(id);
 
             if (person != null)
             {
-                _context.Persons.Remove(person);
+                _context.Users.Remove(person);
                 await _context.SaveChangesAsync();
                 return person;
             }
             return null;
         }
 
-        public async Task<IEnumerable<Person>> GetAllAsync()
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
-            return await _context.Persons.AsNoTracking().ToListAsync();
+            return await _context.Users.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Person?> GetByIdAsync(int id)
+        public async Task<User?> GetByIdAsync(int id)
         {
-            return await _context.Persons.FindAsync(id);
+            return await _context.Users.FindAsync(id);
         }
 
-        public async Task<Person?> UpdateAsync(int id, Person person)
+        public async Task<User?> UpdateAsync(int id, User person)
         {
-            Person? upatePerson = await GetByIdAsync(id);
+            User? upatePerson = await GetByIdAsync(id);
 
             if (upatePerson == null)
             {

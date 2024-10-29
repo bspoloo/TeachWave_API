@@ -24,7 +24,7 @@ namespace TeachWaveAPI.Application.Services
 
         public async Task<PersonOutDTO?> createPersonAsync(CreatePersonDTO personDTO)
         {
-            var person = _mapper.Map<Person>(personDTO);
+            var person = _mapper.Map<User>(personDTO);
             var result = await _personRepository.AddAsync(person);
             return _mapper.Map<PersonOutDTO>(result);
         }

@@ -9,10 +9,10 @@ namespace TeachWaveAPI.Core.Interfaces
 {
     public interface IPersonRepository
     {
-        Task<IEnumerable<Person>> GetAllAsync();
-        Task<Person?> GetByIdAsync(int id);
-        Task<Person> AddAsync(Person person);
-        Task<Person?> UpdateAsync(int id, Person person);
-        Task<Person?> DeleteAsync(int id);
+        Task<IEnumerable<User>> GetAllAsync();
+        Task<User?> GetByIdAsync(int id);
+        Task<User> AddAsync(User person);
+        Task<User?> UpdateAsync(int id, User person);
+        Task<User?> DeleteAsync(int id);
     }
 }

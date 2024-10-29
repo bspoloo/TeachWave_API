@@ -13,16 +13,16 @@ namespace TeachWaveAPI.Application.Mappings
     {
         public AutoMapperProfile()
         {
-            CreateMap<Person, CreatePersonDTO>();
-            CreateMap<CreatePersonDTO, Person>();
+            CreateMap<User, CreatePersonDTO>();
+            CreateMap<CreatePersonDTO, User>();
 
-            CreateMap<PersonOutDTO, Person>();
-            CreateMap<Person, PersonOutDTO>();
+            CreateMap<PersonOutDTO, User>();
+            CreateMap<User, PersonOutDTO>();
 
-            CreateMap<Person, UpdatePersonDTO>()
+            CreateMap<User, UpdatePersonDTO>()
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) =>
                     srcMember != null));
-            CreateMap<UpdatePersonDTO, Person>()
+            CreateMap<UpdatePersonDTO, User>()
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) =>
                     srcMember != null)); ;
 
