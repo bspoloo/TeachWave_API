@@ -34,6 +34,24 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+
+builder.Services.AddScoped<IModuleService, ModuleService>();
+builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
+
+builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
+builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
+
+builder.Services.AddScoped<IAssignmentService, AssignmentService>();
+builder.Services.AddScoped<IAssignmentRepository, AssigmentRepository>();
+
+builder.Services.AddScoped<ISubmissionService, SubmissionService>();
+builder.Services.AddScoped<ISubmissionRepository, SubmissionRepositoy>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
