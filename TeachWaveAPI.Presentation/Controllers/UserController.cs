@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TeachWaveAPI.Application.DTOs.PersonDTO;
@@ -20,6 +21,7 @@ namespace TeachWaveAPI.Presentation.Controllers
         {
             _userService = new UserService(new UserRepository(context), _mapper);
         }
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserOutDTO>>> getAllUsers()
         {
@@ -33,8 +35,9 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return BadRequest(new { success = false, message = ex.Message });
             }
         }
+        [Authorize]
         [HttpGet("{id}")]
-        public async Task<ActionResult<PersonOutDTO>> GetUserById(int id)
+        public async Task<ActionResult<UserOutDTO>> GetUserById(int id)
         {
             try
             {
@@ -46,8 +49,9 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return NotFound(new { success = false, message = ex.Message });
             }
         }
+        [Authorize]
         [HttpPost]
-        public async Task<ActionResult<PersonOutDTO>> CreateUser([FromBody] CreateUserDTO createDTO)
+        public async Task<ActionResult<UserOutDTO>> CreateUser([FromBody] CreateUserDTO createDTO)
         {
             try
             {
@@ -63,9 +67,9 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return StatusCode(500, new { success = false, message = "An error occurred while creating the User.", detail = ex.Message });
             }
         }
-
+        [Authorize]
         [HttpPut("{id}")]
-        public async Task<ActionResult<PersonOutDTO>> UpdateUserById(int id, [FromBody] UpdateUserDTO updateDTO)
+        public async Task<ActionResult<UserOutDTO>> UpdateUserById(int id, [FromBody] UpdateUserDTO updateDTO)
         {
             try
             {
@@ -77,8 +81,9 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return NotFound(new { success = false, message = ex.Message });
             }
         }
-        [HttpDelete]
-        public async Task<ActionResult<PersonOutDTO>> deleteUserById(int id)
+        [Authorize]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<UserOutDTO>> deleteUserById(int id)
         {
             try
             {

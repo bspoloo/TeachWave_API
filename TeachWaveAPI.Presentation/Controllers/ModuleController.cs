@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TeachWaveAPI.Application.DTOs.CourseDTO;
@@ -21,7 +22,7 @@ namespace TeachWaveAPI.Presentation.Controllers
         {
             _moduleService = new ModuleService(new ModuleRepository(context), _mapper);
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ModuleOutDTO>>> getAllModules()
         {
@@ -35,6 +36,7 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return BadRequest(new { success = false, message = ex.Message });
             }
         }
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<ModuleOutDTO>> GetModuleById(int id)
         {
@@ -48,6 +50,7 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return NotFound(new { success = false, message = ex.Message });
             }
         }
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<ModuleOutDTO>> CreateModule([FromBody] CreateModuleDTO createDTO)
         {
@@ -65,7 +68,7 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return StatusCode(500, new { success = false, message = "An error occurred while creating the Module.", detail = ex.Message });
             }
         }
-
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<ActionResult<ModuleOutDTO>> UpdateModuleById(int id, [FromBody] UpdateModuleDTO updateDTO)
         {
@@ -79,7 +82,8 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return NotFound(new { success = false, message = ex.Message });
             }
         }
-        [HttpDelete]
+        [Authorize]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<ModuleOutDTO>> deleteModuleById(int id)
         {
             try
