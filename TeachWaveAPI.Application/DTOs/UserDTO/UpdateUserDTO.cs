@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeachWaveAPI.Core.Entities
+namespace TeachWaveAPI.Application.DTOs.UserDTO
 {
-    public class User
+    public class UpdateUserDTO
     {
-        [Key]
-        public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
@@ -20,11 +17,7 @@ namespace TeachWaveAPI.Core.Entities
         public string? PasswordSalt { get; set; }
         public string? Role { get; set; }
         public DateTime DateOfBirth { get; set; }
-
-        // Soft properties
-        public bool IsDeleted { get; set; } = false;
+        public bool IsDeleted { get; set; }
         public DateTime? DeletedAt { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime UpdatedAt { get; set; } = DateTime.Now;
     }
 }
