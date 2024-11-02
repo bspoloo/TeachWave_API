@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TeachWaveAPI.Application.DTOs.CourseDTO;
@@ -20,7 +21,7 @@ namespace TeachWaveAPI.Presentation.Controllers
         {
             _enrollmentService = new EnrollmentService(new EnrollmentRepository(context), _mapper);
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EnrollmentOutDTO>>> getAllEnrollments()
         {
@@ -34,6 +35,7 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return BadRequest(new { success = false, message = ex.Message });
             }
         }
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<EnrollmentOutDTO>> GetEnrollmentById(int id)
         {
@@ -47,6 +49,7 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return NotFound(new { success = false, message = ex.Message });
             }
         }
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<EnrollmentOutDTO>> CreateEnrollment([FromBody] CreateEnrollmentDTO createDTO)
         {
@@ -64,7 +67,7 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return StatusCode(500, new { success = false, message = "An error occurred while creating the Enrollment.", detail = ex.Message });
             }
         }
-
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<ActionResult<EnrollmentOutDTO>> UpdateEnrollmentById(int id, [FromBody] UpdateEnrollmentDTO updateDTO)
         {
@@ -78,7 +81,8 @@ namespace TeachWaveAPI.Presentation.Controllers
                 return NotFound(new { success = false, message = ex.Message });
             }
         }
-        [HttpDelete]
+        [Authorize]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<EnrollmentOutDTO>> deleteEnrollmentById(int id)
         {
             try
