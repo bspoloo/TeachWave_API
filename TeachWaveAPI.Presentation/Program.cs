@@ -9,6 +9,17 @@ using TeachWaveAPI.Infraestructure.Persistence.Contexts;
 var builder = WebApplication.CreateBuilder(args);
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        policy =>
+        {
+            policy.AllowAnyOrigin() 
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -17,8 +28,8 @@ builder.Services.AddAuthentication(options =>
 .AddJwtBearer(options =>
 {
     options.Authority = "http://localhost:8080/realms/LMS";
-    options.RequireHttpsMetadata = false; // Only developing; use true in production
-    options.Audience = "account"; //client in Keycloak
+    options.RequireHttpsMetadata = false; 
+    options.Audience = "net-app"; 
 
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -26,6 +37,8 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = true,
         ValidateLifetime = true,
         ValidIssuer = "http://localhost:8080/realms/LMS",
+        ValidateIssuerSigningKey = true,
+        ValidAudiences = new[] { "net-app", "account" }
     };
     options.Events = new JwtBearerEvents
     {
@@ -83,6 +96,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAllOrigins");
 
 app.UseHttpsRedirection();
 
